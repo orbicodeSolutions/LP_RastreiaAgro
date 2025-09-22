@@ -10,14 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Copy files via SCP
-        uses: appleboy/scp-action@v0.1.7
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOSTGATOR_HOST }}
           username: ${{ secrets.HOSTGATOR_USER }}
           key: ${{ secrets.HOSTGATOR_SSH_KEY }}
           port: ${{ secrets.HOSTGATOR_PORT }}
-          source: "."
-          target: "/home/${{ secrets.HOSTGATOR_USER }}/rastreia-agro.orbicode.com.br"
-          overwrite: true
-          strip_components: 1 
+          ssh_args: "-oKexAlgorithms=+diffie-hellman-group-exchange-sha256 -oHostKeyAlgorithms=+ssh-rsa"
+          script: |
+            cd /home/${{ secrets.HOSTGATOR_USER }}/rastreia-agro.orbicode.com.br
+            git reset --hard
+            git pull origin main
+            find . -type d -exec chmod 755 {} \;
+            find . -type f -exec chmod 644 {} \;
