@@ -17,10 +17,8 @@ jobs:
           username: ${{ secrets.HOSTGATOR_USER }}
           key: ${{ secrets.HOSTGATOR_SSH_KEY }}
           port: ${{ secrets.HOSTGATOR_PORT }}
-          ssh_args: "-oKexAlgorithms=+diffie-hellman-group-exchange-sha256 -oHostKeyAlgorithms=+ssh-rsa"
           script: |
-            cd /home/${{ secrets.HOSTGATOR_USER }}/rastreia-agro.orbicode.com.br
-            git reset --hard
+            cd /home2/${{ secrets.HOSTGATOR_USER }}/rastreia-agro.orbicode.com.br
             git pull origin main
-            find . -type d -exec chmod 755 {} \;
-            find . -type f -exec chmod 644 {} \;
+          cipher: aes256-cbc
+          use_insecure_cipher: true
