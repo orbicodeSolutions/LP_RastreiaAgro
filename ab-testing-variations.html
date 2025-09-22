@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreia Agro - Variações A/B Testing</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #0F172A;
+            background: #F6F8F5;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .variation {
+            background: white;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .variation h2 {
+            color: #44865C;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #44865C;
+            padding-bottom: 10px;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #0F172A;
+        }
+        .highlight {
+            color: #44865C;
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #64748B;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #44865C 0%, #009A44 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .metrics {
+            background: #F6F8F5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .metrics h4 {
+            color: #44865C;
+            margin-bottom: 10px;
+        }
+        .metrics ul {
+            list-style: none;
+            padding: 0;
+        }
+        .metrics li {
+            padding: 5px 0;
+            color: #64748B;
+        }
+        .recommendation {
+            background: #E8F5E8;
+            border-left: 4px solid #44865C;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .recommendation h4 {
+            color: #44865C;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Rastreia Agro - Variações A/B Testing</h1>
+    <p>Este arquivo contém as variações de headline e CTA para testes A/B da landing page.</p>
+
+    <!-- Variação A (Atual) -->
+    <div class="variation">
+        <h2>📊 Variação A (Controle)</h2>
+        <div class="hero-title">
+            Da lavoura ao consumidor: <span class="highlight">Rastreia Agro</span> simplifica a gestão agrícola
+        </div>
+        <div class="hero-subtitle">
+            Com rastreabilidade acessível e confiável, produtores de qualquer porte têm no celular o controle de safras exigido pelo mercado.
+        </div>
+        <a href="#" class="btn">
+            <span>Falar com um consultor</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        
+        <div class="metrics">
+            <h4>Métricas para Acompanhar:</h4>
+            <ul>
+                <li>Taxa de cliques no CTA</li>
+                <li>Tempo na página</li>
+                <li>Taxa de rejeição</li>
+                <li>Scroll depth</li>
+                <li>Conversões para WhatsApp</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Variação B -->
+    <div class="variation">
+        <h2>🚀 Variação B (Teste)</h2>
+        <div class="hero-title">
+            <span class="highlight">Rastreia Agro</span> conecta produtores à tecnologia, garantindo rastreabilidade e controle de safras
+        </div>
+        <div class="hero-subtitle">
+            Da lavoura ao consumidor: relatórios simples, controle no celular e confiança para o mercado. Para produtores de qualquer porte.
+        </div>
+        <a href="#" class="btn">
+            <span>Falar com um consultor</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        
+        <div class="metrics">
+            <h4>Métricas para Acompanhar:</h4>
+            <ul>
+                <li>Taxa de cliques no CTA</li>
+                <li>Tempo na página</li>
+                <li>Taxa de rejeição</li>
+                <li>Scroll depth</li>
+                <li>Conversões para WhatsApp</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Variação C -->
+    <div class="variation">
+        <h2>💡 Variação C (Alternativa)</h2>
+        <div class="hero-title">
+            Com <span class="highlight">Rastreia Agro</span>, produtores de qualquer porte têm no celular a rastreabilidade de safras exigida pelo mercado
+        </div>
+        <div class="hero-subtitle">
+            Aplicativo mobile-first que simplifica a gestão agrícola com relatórios fáceis de registrar e visualizar, aumentando a confiança do consumidor.
+        </div>
+        <a href="#" class="btn">
+            <span>Falar com um consultor</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        
+        <div class="metrics">
+            <h4>Métricas para Acompanhar:</h4>
+            <ul>
+                <li>Taxa de cliques no CTA</li>
+                <li>Tempo na página</li>
+                <li>Taxa de rejeição</li>
+                <li>Scroll depth</li>
+                <li>Conversões para WhatsApp</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Variação D -->
+    <div class="variation">
+        <h2>🎯 Variação D (Foco em Benefício)</h2>
+        <div class="hero-title">
+            Rastreabilidade agrícola <span class="highlight">simples e acessível</span> para produtores de qualquer porte
+        </div>
+        <div class="hero-subtitle">
+            Rastreia Agro: controle suas safras pelo celular, gere relatórios fáceis e aumente a confiança do mercado. Da lavoura ao consumidor.
+        </div>
+        <a href="#" class="btn">
+            <span>Falar com um consultor</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        
+        <div class="metrics">
+            <h4>Métricas para Acompanhar:</h4>
+            <ul>
+                <li>Taxa de cliques no CTA</li>
+                <li>Tempo na página</li>
+                <li>Taxa de rejeição</li>
+                <li>Scroll depth</li>
+                <li>Conversões para WhatsApp</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="recommendation">
+        <h4>📈 Recomendações para A/B Testing</h4>
+        <p><strong>1. Teste Sequencial:</strong> Comece testando Variação A vs Variação B por 2 semanas.</p>
+        <p><strong>2. Tamanho da Amostra:</strong> Mínimo de 1000 visitantes por variação para resultados confiáveis.</p>
+        <p><strong>3. Métrica Principal:</strong> Taxa de cliques no botão "Falar com um consultor".</p>
+        <p><strong>4. Significância Estatística:</strong> Aguarde 95% de confiança antes de declarar um vencedor.</p>
+        <p><strong>5. Teste em Dispositivos:</strong> Verifique se a performance é consistente em mobile e desktop.</p>
+    </div>
+
+    <div class="recommendation">
+        <h4>🛠️ Como Implementar</h4>
+        <p><strong>Google Optimize:</strong> Crie um teste A/B e use o código fornecido no script.js</p>
+        <p><strong>Google Tag Manager:</strong> Configure triggers para diferentes variações</p>
+        <p><strong>Implementação Manual:</strong> Descomente as linhas de A/B testing no script.js</p>
+    </div>
+
+    <div class="recommendation">
+        <h4>📊 Ferramentas de Analytics</h4>
+        <p><strong>Google Analytics 4:</strong> Configure eventos personalizados para conversões</p>
+        <p><strong>Hotjar:</strong> Use heatmaps para entender comportamento do usuário</p>
+        <p><strong>Facebook Pixel:</strong> Se usar anúncios no Facebook/Instagram</p>
+    </div>
+
+    <footer style="text-align: center; margin-top: 60px; padding: 20px; color: #64748B;">
+        <p>💡 <strong>Dica:</strong> Teste uma variação por vez e documente os resultados para futuras otimizações!</p>
+    </footer>
+</body>
+</html>
