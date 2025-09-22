@@ -1,0 +1,29 @@
+name: Deploy to HostGator
+
+on:
+  push:
+    branches:
+      - main   # troque se sua branch principal for diferente
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/[email protected]
+        with:
+          host: ${{ secrets.HOSTGATOR_HOST }}
+          username: ${{ secrets.HOSTGATOR_USER }}
+          key: ${{ secrets.HOSTGATOR_SSH_KEY }}
+          port: ${{ secrets.HOSTGATOR_PORT }}
+          script: |
+            cd /home/${{ secrets.HOSTGATOR_USER }}/rastreia-agro.orbicode.com.br
+            git reset --hard
+            git pull origin main
+            # se precisar rodar build, coloque aqui (ex: npm run build ou composer install)
+            find . -type d -exec chmod 755 {} \;
+            find . -type f -exec chmod 644 {} \;
