@@ -1,28 +1,26 @@
-name: Deploy to HostGator
+name: Deploy to Hostgator
 
 on:
   push:
-    branches:
-      - main  # branch que dispara o deploy
+    branches: [ main, master ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Get latest code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Deploy to HostGator via SSH
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.HOSTGATOR_HOST }}
-          username: ${{ secrets.HOSTGATOR_USER }}
-          key: ${{ secrets.HOSTGATOR_SSH_KEY }}
-          port: ${{ secrets.HOSTGATOR_PORT }}
-          script: |
-            cd /home/${{ secrets.HOSTGATOR_USER }}/rastreia-agro.orbicode.com.br
-            git pull origin main
-            # ajuste de permissões
-          cipher: aes256-cbc
-          use_insecure_cipher: true
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.HOSTGATOR_SSH_KEY }}
+
+    - name: Deploy to server
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.HOSTGATOR_USER }}@${{ secrets.HOSTGATOR_HOST }} "
+          cd ${{ secrets.DEPLOY_PATH }} &&
+          git pull origin main &&
+          echo 'Deploy realizado com sucesso!'
+        "
